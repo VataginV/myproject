@@ -1,0 +1,134 @@
+.body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    padding: 8%;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 56px;
+    text-align: center;
+}
+
+h2 {
+    color: white; 
+    font-weight: bold;
+    font-size: 42px;
+    padding-top: 10%;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #343a40; 
+}
+
+.navbar-toggler {
+    border-color: red; 
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='red' stroke-width='2' stroke-linecap='round' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.nav-link {
+    color: white; 
+    font-weight: bold; 
+}
+
+.nav-link:hover {
+    color: #ffcc00;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.carousel-inner img {
+    width: 750px; 
+    height: 420px; 
+    border-radius: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+}
+
+.carousel-item.active {
+    margin-top: 50px;
+    margin-bottom: 300px;
+}
+
+.carousel-indicators {
+    justify-content:space-around;
+}
+.carousel-indicators img {
+    width: 165px; 
+    height: 165px;
+}
+
+.thumbnail {
+    border: 1px solid white; 
+    width: 165px;
+    height: 165px;
+    border-radius: 40px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center; 
+}
+
+.prev, .next {
+    position: absolute;
+    top: 85%;
+    transform: translateY(-50%); 
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel .prev,
+.carousel .next {
+    background: transparent; 
+    border: none; 
+}
+
+.carousel .prev:hover,
+.carousel .next:hover {
+    background: rgba(255, 255, 255, 0.5); 
+}
+
+@media (max-width: 768px) {
+    .carousel-item img,
+    .thumbnail {
+        width: 100vw; 
+        height: auto; 
+        max-width: none; 
+        margin-bottom: 20px;
+        border-radius: initial; 
+        border-width: initial; 
+        border-style:none; 
+        border-color:none; 
+        box-shadow:none; 
+     }
+
+     .carousel-control-prev, 
+     .carousel-control-next,
+     .carousel-indicators {
+         display:none; 
+     }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Photo Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#gfgnavbar"> 
+            <span class="navbar-toggler-icon"></span> 
+        </button> 
+        <a class="navbar-brand" href="#"> 
+            <img src="{{ 'static/media/Логотип.png' }}" alt="NASA Logo">
+        </a>
+        <div class="collapse navbar-collapse justify-content-center" id="gfgnavbar"> 
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="#">Преимущества</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Фотографии</a></li>
+            </ul>
+        </div>
+        <button class="btn btn-danger">Вход</button> 
+    </div>
+</nav>
+
+<div class="container mt-5" style="padding: 8%;">
+    <h1 class="text-center" style="font-weight: bold;font-size: 56px;">Космическое агентство</h1>
+    <p class="text-center" style="font-size: 18px;font-family: 'Montserrat'">Национальное управление по аэронавтике и исследованию космического пространства - ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.</p>
+    
+    <div class="row d-flex align-items-center flex-column flex-md-row">
+        <div class="col-md-6 d-flex flex-column align-items-center">
+            <div class="row mt-4 justify-content-center">
+                <div class="col-6 text-center">
+                    <img src="{{ 'static/media/fa6-solid_shuttle-space.png' }}" class="img-fluid mb-2" alt="Шаттл">
+                    <h3>Спейс шаттлы - пилотируемые корабли</h3>
+                </div>
+                <div class="col-6 text-center">
+                    <img src="{{ 'static/media/ion_telescope.png' }}" class="img-fluid mb-2" alt="Телескоп">
+                    <h3>Лучшее телескопическое оборудование</h3>
+                </div>
+            </div>
+
+            <div class="row mt-4 justify-content-center">
+                <div class="col-6 text-center">
+                    <img src="{{ 'static/media/bi_moon-stars-fill.png' }}" class="img-fluid mb-2" alt="Луна и Марс">
+                    <h3>Целимся на Луну и Марс</h3>
+                </div>
+                <div class="col-6 text-center">
+                    <img src="{{ 'static/media/bxs_medal.png' }}" class="img-fluid mb-2" alt="Золотая медаль">
+                    <h3>Золотая медаль по научным исследованиям</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 text-center mt-4 mt-md-0 d-flex justify-content-center align-items-center">
+            <img src="{{ 'static/media/9c0ee4e1f6bb7bae43de7850168fdce7.jpg' }}" class="img-fluid" alt="Изображение" style="border-radius: 40px; height: auto;width: 457px;height:457px;">
+        </div>
+    </div>
+</div> 
+
+<div style="background-color: #3C3C3C;">
+    <h2 class="text-center text-white">Фотографии</h2>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for slider in slider_images %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="{{ slider.image.url }}" alt="{{ slider.name }}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <button class="carousel-control-prev" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+        <div class="carousel-indicators">
+            {% for slider in slider_images %}
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}" 
+                        class="{% if forloop.first %}active{% endif %} rounded-circle" aria-current="{% if forloop.first %}true{% endif %}" 
+                        aria-label="{{ slider.name }}">
+                    <img src="{{ slider.image.url }}" class="d-block thumbnail" alt="{{ slider.name }}">
+                </button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
