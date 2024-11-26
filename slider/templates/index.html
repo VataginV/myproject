@@ -90,18 +90,17 @@
         <button class="carousel-control-next" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
+    </div>
 
-        <div class="carousel-indicators">
-            {% for slider in slider_images %}
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}" 
-                        class="{% if forloop.first %}active{% endif %} rounded-circle" aria-current="{% if forloop.first %}true{% endif %}" 
-                        aria-label="{{ slider.name }}">
-                    <img src="{{ slider.image.url }}" class="d-block thumbnail" alt="{{ slider.name }}">
-                </button>
-            {% endfor %}
-        </div>
+    <div class="d-flex justify-content-center mt-3">
+        {% for slider in slider_images %}
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}" 
+                    class="{% if forloop.first %}active{% endif %} rounded-circle mx-1" aria-current="{% if forloop.first %}true{% endif %}" 
+                    aria-label="{{ slider.name }}">
+                <img src="{{ slider.image.url }}" class="d-block thumbnail" alt="{{ slider.name }}">
+            </button>
+        {% endfor %}
     </div>
 </div>
-
 </body>
 </html>

@@ -63,22 +63,27 @@ p {
 
 .carousel-item.active {
     margin-top: 50px;
-    margin-bottom: 300px;
+    margin-bottom: 100px;
 }
 
-.carousel-indicators {
-    justify-content:space-around;
+.carousel {
+    display: flex; 
+    overflow-x: auto;
+    padding: 10px; 
 }
-.carousel-indicators img {
-    width: 165px; 
-    height: 165px;
+
+.rounded-circle {
+    background: transparent;
+    margin-right: 10px; 
+    border: none;
+    padding-bottom: 30px;
 }
 
 .thumbnail {
-    border: 1px solid white; 
     width: 165px;
     height: 165px;
     border-radius: 40px;
+    border: 1px solid white;
 }
 
 .wrapper {
@@ -87,15 +92,10 @@ p {
     grid-auto-rows: minmax(100px, auto);
 }
 
-.carousel-controls {
-    display: flex;
-    justify-content: center; 
-}
-
 .prev, .next {
     position: absolute;
-    top: 85%;
-    transform: translateY(-50%); 
+    top: 95%;
+    transform: translateY(-80%); 
 }
 
 .prev { left: 10px; }
@@ -110,25 +110,4 @@ p {
 .carousel .prev:hover,
 .carousel .next:hover {
     background: rgba(255, 255, 255, 0.5); 
-}
-
-@media (max-width: 768px) {
-    .carousel-item img,
-    .thumbnail {
-        width: 100vw; 
-        height: auto; 
-        max-width: none; 
-        margin-bottom: 20px;
-        border-radius: initial; 
-        border-width: initial; 
-        border-style:none; 
-        border-color:none; 
-        box-shadow:none; 
-     }
-
-     .carousel-control-prev, 
-     .carousel-control-next,
-     .carousel-indicators {
-         display:none; 
-     }
 }
