@@ -27,14 +27,14 @@ h3 {
 p {
     font-size: 18px;
     text-align: center;
+    font-family: 'Montserrat';
+    padding-bottom: 70px;
 }
 
 .navbar {
-    background-color: #343a40; 
-}
-
-.navbar-toggler {
-    border-color: red; 
+    background-color: #0A121E; 
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .navbar-toggler-icon {
