@@ -80,17 +80,9 @@ p {
     font-size: 0;
 }
 
-@media (max-width: 768px) 
-{
-    .slick-prev,
-    .slick-next{
-            display: none;
-    }
-}
 
 .slick-dots {
     visibility: hidden;
-    position: relative;
 }
 
 .slick-prev::before,
@@ -106,6 +98,6 @@ p {
     display:contents;
 }
 
-.slick-track{
-    padding:0px;
+.slider-nav{
+    padding-bottom: 50px;
 }
