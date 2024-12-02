@@ -135,3 +135,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'templates/src']
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'gallery_large': {'size': (165, 165), 'crop': "-10,-0"},
+        'active_large': {'size': (750, 420), 'crop': "-10,-0"},
+    },
+}

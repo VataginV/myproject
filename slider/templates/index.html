@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 {% load static %}
+{% load thumbnail %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA Photo Gallery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,8 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>				
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
 
@@ -71,36 +73,30 @@
 </div> 
 
 <div style="background-color: #3C3C3C;">
-    <h2 class="text-center text-white">Фотографии</h2>
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            {% for slider in slider_images %}
-                <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <img src="{{ slider.image.url }}" alt="{{ slider.name }}">
+    <h2 class="text-center text-white" style="padding-bottom: 50px;">Фотографии</h2>
+    <div class="slider">
+        <center>
+            <div class="slider-for">
+                {% for slider in slider_images %}
+                    <div>
+                        <img src="{% thumbnail slider.image 'active_large' %}" alt="{{ slider.title }}" class="large_img desktop-img">
                     </div>
+                {% endfor %}
+            </div>
+        </center>
+        
+        <div class="slider-nav">
+            {% for slider in slider_images %}
+                <div>
+                    <img src="{% thumbnail slider.image 'gallery_large' %}" alt="{{ slider.title }}" class="desktop_img desktop-img">
                 </div>
             {% endfor %}
         </div>
-
-        <button class="carousel-control-prev" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
-
-    <div class="d-flex justify-content-center mt-3">
-        {% for slider in slider_images %}
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}" 
-                    class="{% if forloop.first %}active{% endif %} rounded-circle mx-1" aria-current="{% if forloop.first %}true{% endif %}" 
-                    aria-label="{{ slider.name }}">
-                <img src="{{ slider.image.url }}" class="d-block thumbnail" alt="{{ slider.name }}">
-            </button>
-        {% endfor %}
     </div>
 </div>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
