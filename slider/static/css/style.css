@@ -80,11 +80,6 @@ p {
     font-size: 0;
 }
 
-
-.slick-dots {
-    visibility: hidden;
-}
-
 .slick-prev::before,
 .slick-next::before {
     display: none; 
