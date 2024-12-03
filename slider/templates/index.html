@@ -79,7 +79,7 @@
             <div class="slider-for">
                 {% for slider in slider_images %}
                     <div>
-                        <img src="{% thumbnail slider.image 'active_large' %}" alt="{{ slider.title }}" class="large_img desktop-img">
+                        <img src="{% thumbnail slider.image 'active_large' %}" alt="{{ slider.title }}">
                     </div>
                 {% endfor %}
             </div>
@@ -88,7 +88,7 @@
         <div class="slider-nav">
             {% for slider in slider_images %}
                 <div>
-                    <img src="{% thumbnail slider.image 'gallery_large' %}" alt="{{ slider.title }}" class="desktop_img desktop-img">
+                    <img src="{% thumbnail slider.image 'gallery_large' %}" alt="{{ slider.title }}">
                 </div>
             {% endfor %}
         </div>
