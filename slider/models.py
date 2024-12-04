@@ -15,8 +15,3 @@ class SliderImage(models.Model):
 
     def __str__(self):
         return self.title
-
-class SliderImageAdmin(SortableAdminMixin, admin.ModelAdmin):
-    list_display = ('title', 'order', 'image')
-    list_editable = ('order',)
-    prepopulated_fields = {'title': ('image',)}

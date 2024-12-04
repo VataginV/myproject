@@ -11,6 +11,6 @@ $(document).ready(function() {
       slidesToScroll: 1,
       asNavFor: '.slider-for',
       centerMode: true,
-      focusOnSelect: true
+      focusOnSelect: true,
   });
 });
