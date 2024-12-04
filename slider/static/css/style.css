@@ -57,13 +57,11 @@ p {
 .slick-prev {
     background-image: url('/static/media/vector.png'); 
     left: 10px; 
-    font-size: 0;
 }
 
 .slick-next {
     background-image: url('/static/media/vector_1.png');
     right: 10px; 
-    font-size: 0;
 }
 
 .slick-prev::before,
