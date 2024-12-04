@@ -46,15 +46,6 @@ p {
     font-weight: bold; 
 }
 
-.slider-for {
-    background: none;
-    font-size: 0; 
-    padding-bottom: 50px;
-}
-.large_img{
-    box-shadow: 0 4px 8px rgb(0, 0, 0);
-}
-
 .slick-arrow {
     background-repeat: no-repeat;
     background-position: center center;
@@ -89,6 +80,6 @@ p {
     border-radius: 40px;
 }
 
-.slider{
-    display:contents;
+.slick-center img{
+    border: 1px solid white; 
 }
