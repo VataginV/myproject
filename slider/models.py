@@ -1,5 +1,4 @@
 from django.contrib import admin
-from adminsortable2.admin import SortableAdminMixin
 from filer.fields.image import FilerImageField
 from django.db import models
 
