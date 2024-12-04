@@ -30,7 +30,6 @@ p {
     font-family: 'Montserrat';
     padding-bottom: 70px;
 }
-
 .navbar {
     background-color: #0A121E; 
     padding-left: 10%;
@@ -55,6 +54,11 @@ p {
 .slick-prev {
     background-image: url('/static/media/vector.png'); 
     left: 10px; 
+}
+
+
+.slider-for img{
+    box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.5);
 }
 
 .slick-next {
